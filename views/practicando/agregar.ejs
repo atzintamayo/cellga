@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: url(images/background.jpg) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            --def: #96B7C4;
+            --inv: #fff;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Impxort Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+</head>
+<body>
+    <br><br><br>
+    <!-- class="white-text" -->
+    <div class="row section">
+        <div class="col s12 s6 l3"></div>
+        <div class="col s12 s6 l6">            
+            <h4 class="orange-text">Agregar un producto a la papeleria</h4> 
+            <form action="/agregarDB" method="post">
+                <label for="nombre" class="orange-text">Nombre del producto</label>
+                <input type="text" name="nombre" id="nombre" class="white-text" >
+                <br>
+                <label for="precio" class="orange-text">Precio de producto</label>
+                <input type="number" name="precio" id="precio" class="white-text" >
+                <br>
+                <label for="descripcion" class="orange-text">Descripcion del produto</label>
+                <input type="text" name="descripcion" id="descripcion" class="white-text" >
+                <br>
+                <button class="btn waves-effect waves-light blue darken-1"type="submit">
+                    Enviar<i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+        <div class="col s12 s6 l3"></div>
+    </div>
+        <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>     
+</body>
+</html>

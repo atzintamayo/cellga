@@ -1,0 +1,33 @@
+<%- include("template/head", {title:'Cellga'})%>
+<body>
+    <h1>Mostrar una lista de las tablas desencriptadas</h1>
+    <a href="/consultar"><h4>Usuarios</h4></a>
+    <a href="/admin"><h4>Otro</h4></a>
+
+    <% if(usuariosDB!=""){ %>
+    <table>
+        <thead>
+            <tr>
+                <th>Correo</th>
+                <th>Contraseña</th>
+                <th>Nombre</th>
+                <th>Fecha de Registro</th>
+            </tr>
+        </thead>
+        <tbody>            
+                <% for(var i=0; i< usuariosDB.length; i++){ %>
+                    <tr>
+                        <td><%= usuariosDB[i].Usu_id %>&nbsp&nbsp&nbsp</td>                        
+                        <td><%= usuariosDB[i].Usu_contraseña %>&nbsp&nbsp&nbsp</td>                        
+                        <td><%= usuariosDB[i].Usu_nombre %>&nbsp&nbsp&nbsp</td>                        
+                        <td><%= usuariosDB[i].Usu_fechaReg %>&nbsp&nbsp&nbsp</td>
+                    </tr>       
+                <% } %>
+            
+        </tbody>
+    </table>
+    <% } %>
+    <input type="search" name="buscador" id="buscador" placeholder="Buscar por correo">  
+    
+</body>
+</html>

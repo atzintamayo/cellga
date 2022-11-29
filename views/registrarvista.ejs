@@ -1,0 +1,37 @@
+<%- include("template/head",{title:'registrar'})%>
+
+<body id="centrado">
+ <form action="/registrarDB" class="formulario" method="post">
+    
+    <h1>Registrate</h1>
+     <div class="contenedor2">
+     
+     <div class="input-contenedor">
+         <i class="fas fa-user icon"></i>
+         <input type="text" placeholder="Nombre Completo" id="nombre" name="nombre" class="inputtext" autofocus required>
+         
+         </div>
+         
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input type="email" placeholder="Correo Electronico" id="correo" name="correo" class="inputemail" required>
+         
+         </div>
+         
+         <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+         <input type="password" placeholder="Contraseña" id="pss" name="pss" minlength="8" maxlength="20" class="inputcontra" required>
+         
+         </div>
+         <div class="centrado">
+         <input type="submit" value="Registrate" class="button">
+         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         <p>¿Ya tienes una cuenta?<a class="link" href="/loginvistaApp">Iniciar Sesion</a></p>
+         <p><a class="link" href="/index">Regresar </a></p>
+
+         </div>
+         
+     </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<%- include("template/head", {title:'Login'})%>  
+<body>
+    <form class="formulario" method="POST" action="loginvistaDB">
+    
+    <h1>Login</h1>
+     <div class="contenedor2">
+     
+     
+         
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input type="email" placeholder="Correo Electronico" name="campo_correo" id="campo_correo" class="inputemail" autofocus required>         
+         </div>
+         
+         <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+         <input type="password" placeholder="Contraseña" name="campo_pass" id="campo_pass" class="inputcontra" required>
+         
+         </div>
+         <input type="submit" value="Login" class="button">
+         <br>
+         <div class="centrado">
+         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         <p>¿No tienes una cuenta? <a class="link" href="/registrarvistaApp">Registrate </a></p>
+         <p><a class="link" href="/auth/google">Iniciar Sesion con google </a></p>
+         <p><a class="link" href="/index">Regresar </a></p>
+         </div>
+     </div>
+    </form>
+</body>
+</html>

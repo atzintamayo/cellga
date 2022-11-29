@@ -1,0 +1,136 @@
+<%- include("template/head", {title:'Cellga'})%>
+<body data-bs-spy="scroll" data-bs-target="#navbarExample">
+    <%if(user){ %>        
+        <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <!-- <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>  -->
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <a class="navbar-brand logo-text" href="/index">Cellga</a>
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false" >Usuario</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item">Bienvenido</a></li>
+                            <li><p class="dropdown-item"> <%= user[0].Usu_nombre %> </p></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="/config>">Configuracion</a></li>
+                            <li><a class="dropdown-item" href="/cerrarSesion">Cerrar Sesion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <header id="header" class="header2">
+        <div class="container">
+            <div class="row">
+                    
+                <hr>
+                        
+                <h1 class="h1-large">Tus actividades: </h1>
+            
+                <!-- <div> -->
+                        
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+
+    <div class="container">
+        <a class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#unirtablero">Crear Actividad</a><br>
+        
+        <% for(let i=0; i < results.length; i++){ %>
+            <% let numerio = i %>
+            <div class="<%= results[i].Tari_color%>"> 
+                <div class="asig">
+                    <div>
+                        <strong><%= results[i].Tari_tema %></strong><br>
+                        <p><%= results[i].Tari_descripcion %></p><br>
+                        <p>Hora de finalización:</p>
+                        <p><%= results[i].tari_fechaExp %></p>
+                        
+                        
+                        
+                    </div>
+                    <<div class="barra">
+                        <a href="/actualizar/<%= results[i].Tari_id %>" ><i class="fas fa-edit fa-2x" id="iconos"></i></a>
+                        <a href="/eliminar/<%= results[i].Tari_id %>" > <i class="far fa-trash-alt fa-2x" id="iconos"></i></a> 
+                        
+                    </div>
+                    
+                </div>                             
+                   
+           
+          <% } %> 
+        </div> 
+        
+       
+
+    </div>
+    <!-- Details Modal -->
+    <div id="unirtablero" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="row">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <form action="/agregarActividadTIDB" method="POST">
+                            <h3>Ingrese la informacion de la actividad</h3>
+                            <hr>
+                            <span class="parrafo1">
+                                Tema: 
+                            </span>
+                            <input type="text"  class="form-control" id="tema" name="tema" aria-describedby="emailHelp" autofocus required>
+                            <span class="parrafo1">
+                                Descripción:
+                            </span>
+                            <input type="text"  class="form-control" id="descripcion" name="descripcion" aria-describedby="emailHelp" required>
+                            <!-- Dia:<input type="date" class="form-control" id="dia" name="dia" aria-describedby="emailHelp"> -->
+                            <span class="parrafo1">
+                                Fecha de término:
+                            </span>
+                            <br><input type="datetime-local" name="fecha" id="fecha" class="inputfecha" required>
+                            <br>
+                            <span class="parrafo1">
+                                Color:
+                            </span>
+                            <br>
+                            <input type="radio" name="color" id="alto" value="alto"><label for="alto">Rojo</label>                        
+                            <input type="radio" name="color" id="medio" value="medio"><label for="medio">Amarillo</label>                        
+                            <input type="radio" name="color" id="bajo" value="bajo"><label for="bajo">Verde</label><br><br>
+                            <!-- Hora:<input type="time"  class="form-control" id="hora" name="hora" aria-describedby="emailHelp"> -->
+                            <input type="submit" class="inputsubmit" value="crear">                        
+                        </form>   
+                </div><!-- end of row -->
+            </div> <!-- end of modal-content -->
+        </div> <!-- end of modal-dialog -->
+    </div>
+
+    
+    
+
+    <button  class="boton">
+        <img src="images/up-arrow.png" alt="alternative">
+    </button>
+
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <% }else{ %>
+        <h1> No existe usuario</h1>
+        <a href="/loginvistaApp">Inicia Sesion</a>
+    <% } %>        
+
+</body>
+</html>
+

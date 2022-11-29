@@ -1,0 +1,10 @@
+{
+    "service": "gmail",
+    "auth": {
+      "type": "OAuth2",
+      "user": "cellga.mx@gmail.com",
+      "clientId": "701610244961-rdij0kje17tiqqfb051pq32nq8raqu6r.apps.googleusercontent.com",
+      "clientSecret": "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",
+      "refreshToken": "1//04K5HCu22YLRXCgYIARAAGAQSNwF-L9Ir0AIIJ5EztDe2anNdF56WnK_0O5LjnY-iJO8q1x9-DUMcZfypqbNcEnLniyr0rBFbe0c"
+    }
+  }
